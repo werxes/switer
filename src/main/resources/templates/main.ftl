@@ -10,9 +10,10 @@
     <span><a href="/user">User admin</a></span>
 
     <div>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <input type="text", name="text", placeholder="Enter Message"/>
-            <input type="text", name="filter", placeholder="Enter TAG" />
+            <input type="text", name="tag", placeholder="Enter TAG" />
+            <input type="file" name="file">
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             <button type="submit">Add Message</button>
         </form>
@@ -22,7 +23,7 @@
     <div>Filtering</div>
     </br>
     <form method="get" action="/main">
-        <input type="text" name="filter" value="${filter}"/>
+        <input type="text" name="filter" value="${filter?if_exists}"/>
         <button type="submit">Filter</button>
     </form>
 
@@ -35,6 +36,13 @@
             <span>${message.text}</span>
             <i>${message.tag}</i>
             <strong>${message.authorName}</strong>
+             <div>
+                 <#if message.filename??>
+                     <img src="img/${message.filename}"
+                 </#if>
+
+             </div>
+
         </div>
     <#else>
     No Messages

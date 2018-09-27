@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f02c804-81cb-414d-ab38-e26f989705db" name="Default Changelist" comment="" />
+    <list default="true" id="4f02c804-81cb-414d-ab38-e26f989705db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,9 +23,10 @@
         <counts>
           <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="5" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -33,6 +36,7 @@
           <entry key="ftl" value="1376" />
           <entry key="html" value="11" />
           <entry key="java" value="5273" />
+          <entry key="md" value="5" />
           <entry key="mustache" value="1092" />
           <entry key="properties" value="154" />
           <entry key="txt" value="10" />
@@ -46,6 +50,7 @@
           <entry key="Handlebars/Mustache" value="1091" />
           <entry key="JAVA" value="5273" />
           <entry key="Manifest" value="19" />
+          <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="23" />
           <entry key="Properties" value="154" />
           <entry key="XML" value="118" />
@@ -60,6 +65,7 @@
           <entry key="html" value="13" />
           <entry key="iml" value="2" />
           <entry key="java" value="187" />
+          <entry key="md" value="2" />
           <entry key="mustache" value="57" />
           <entry key="properties" value="23" />
           <entry key="xml" value="24" />
@@ -74,6 +80,7 @@
           <entry key="IDEA_MODULE" value="2" />
           <entry key="JAVA" value="187" />
           <entry key="Manifest" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="23" />
           <entry key="UML" value="1" />
@@ -84,36 +91,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/switer/config/MvcConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/switer/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#955#971#1" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -175,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/main.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/switer/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/switer/config/MvcConfig.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -219,6 +205,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -228,11 +215,28 @@
               <item name="switer" type="b2602c69:ProjectViewProjectNode" />
               <item name="switer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="switer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="switer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="switer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="switer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="switer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="switer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,6 +441,7 @@
       <workItem from="1537804143716" duration="41776000" />
       <workItem from="1538042295448" duration="65000" />
       <workItem from="1538043704783" duration="8721000" />
+      <workItem from="1538060777005" duration="50000" />
     </task>
     <task id="LOCAL-00001" summary="Admin">
       <created>1538042125751</created>
@@ -445,14 +450,22 @@
       <option name="project" value="LOCAL" />
       <updated>1538042125752</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Admin">
+      <created>1538060795002</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1538060795002</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89345000" />
+    <option name="totallyTimeSpent" value="89395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2046875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -560,9 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -571,11 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -627,9 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,13 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="631">
           <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1389#1390#0" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,9 +779,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/config/MvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="624">
           <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
         </state>
       </provider>
@@ -797,18 +802,17 @@
           <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#955#971#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/switer/config/MvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

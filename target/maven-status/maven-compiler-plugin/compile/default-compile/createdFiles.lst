@@ -1,0 +1,12 @@
+switer\config\MvcConfig.class
+switer\Application.class
+switer\config\WebSecurityConfig.class
+switer\domains\User.class
+switer\controller\RegistrationController.class
+switer\domains\Message.class
+switer\service\UserService.class
+switer\repos\MessageRepository.class
+switer\controller\MainController.class
+switer\repos\UserRepository.class
+switer\domains\Role.class
+switer\controller\UserController.class

@@ -3,7 +3,7 @@
 
 
 <@c.page>
-    Login Page
-    <@l.login "/login" />
-    <a href="/registration">Go to Register</a>
+    <h3>Login Page</h3>
+    </br>
+    <@l.login "/login" false />
 </@c.page>

@@ -3,7 +3,7 @@
 
 
 <@c.page>
-    Registration Page
+    <div class="mb-1">Registration Page</div>
     <#if message??>${message}</#if>
-    <@l.login "/registration"/>
+    <@l.login "/registration" true/>
 </@c.page>

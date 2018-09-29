@@ -4,48 +4,73 @@
 
 <@c.page>
 
-    <div>
-        <@l.logout />
-    </div>
-    <span><a href="/user">User admin</a></span>
-
-    <div>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="text", name="text", placeholder="Enter Message"/>
-            <input type="text", name="tag", placeholder="Enter TAG" />
-            <input type="file" name="file">
-            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-            <button type="submit">Add Message</button>
-        </form>
-    </div>
-    </br>
-
-    <div>Filtering</div>
-    </br>
-    <form method="get" action="/main">
-        <input type="text" name="filter" value="${filter?if_exists}"/>
-        <button type="submit">Filter</button>
-    </form>
-
-    <div>List of Messages</div>
-
-    </br>
-    <#list messages as message>
-         <div>
-            <b>${message.id}</b>
-            <span>${message.text}</span>
-            <i>${message.tag}</i>
-            <strong>${message.authorName}</strong>
-             <div>
-                 <#if message.filename??>
-                     <img src="img/${message.filename}"
-                 </#if>
-
-             </div>
-
+    <div class="form-row">
+        <div class="from-group col-md-6 mb-3">
+            <form method="get" action="/main" class="form-inline">
+                <input class="form-control" type="text" name="filter" value="${filter?if_exists}" placeholder="Search by #Tag"/>
+                <button type="submit" class="btn btn-primary ml-2">Search</button>
+            </form>
         </div>
-    <#else>
-    No Messages
-    </#list>
+    </div>
+
+
+
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Add new post
+    </a>
+
+
+    <div class="collapse" id="collapseExample">
+        <div  class="form-group mt-3">
+            <form method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="text" placeholder="Enter Message"/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="tag" placeholder="Enter TAG" />
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" name="file" id="customFile"/>
+                        <label class="custom-file-label" for="customFile">Choose Image</label>
+                    </div>
+                </div>
+
+                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit" >Add Message</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+    </br>
+    </br>
+    <div class="card-columns">
+        <#list messages as message>
+             <div class="card my-3">
+                 <#if message.filename??>
+                    <img class="card-img-top" src="img/${message.filename}" alt="Card image cap">
+                 </#if>
+                 <div class="m-2">
+                    <span>${message.text}</span>
+                    <i>${message.tag}</i>
+                 </div>
+                <div class="card-footer text-muted">
+                    ${message.authorName}
+                </div>
+            </div>
+        <#else>
+        No Messages
+        </#list>
+    </div>
 
 </@c.page>

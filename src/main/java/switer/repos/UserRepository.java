@@ -6,4 +6,6 @@ import switer.domains.User;
 public interface UserRepository extends JpaRepository<User, Long>
 {
     User findByUsername(String usrename);
+
+    User findByActivationCode(String code);
 }

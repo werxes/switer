@@ -3,7 +3,6 @@
 
 
 <@c.page>
-    <h3>Login Page</h3>
-    </br>
+    <#if message??>${message}</#if>
     <@l.login "/login" false />
 </@c.page>

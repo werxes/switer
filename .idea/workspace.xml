@@ -7,14 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f02c804-81cb-414d-ab38-e26f989705db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/switer/controller/ControllerUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/switer/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/switer/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/switer/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/switer/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/switer/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/switer/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/switer/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/switer/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/switer/domains/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/switer/domains/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/switer/domains/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/switer/domains/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/switer/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/switer/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/security.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/security.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,7 +65,7 @@
           <entry key="dummy" value="12" />
           <entry key="ftl" value="3194" />
           <entry key="html" value="11" />
-          <entry key="java" value="8139" />
+          <entry key="java" value="9247" />
           <entry key="md" value="177" />
           <entry key="mustache" value="1092" />
           <entry key="properties" value="392" />
@@ -76,7 +80,7 @@
           <entry key="FTL" value="3194" />
           <entry key="HTML" value="11" />
           <entry key="Handlebars/Mustache" value="1091" />
-          <entry key="JAVA" value="8139" />
+          <entry key="JAVA" value="9247" />
           <entry key="Manifest" value="19" />
           <entry key="Markdown" value="177" />
           <entry key="PLAIN_TEXT" value="23" />
@@ -90,33 +94,33 @@
         <counts>
           <entry key="MF" value="1" />
           <entry key="Service" value="1" />
-          <entry key="class" value="12" />
+          <entry key="class" value="13" />
           <entry key="css" value="3" />
-          <entry key="ftl" value="65" />
+          <entry key="ftl" value="71" />
           <entry key="html" value="13" />
           <entry key="iml" value="2" />
-          <entry key="java" value="227" />
+          <entry key="java" value="239" />
           <entry key="md" value="6" />
           <entry key="mustache" value="57" />
           <entry key="properties" value="32" />
-          <entry key="sql" value="9" />
+          <entry key="sql" value="10" />
           <entry key="xml" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="12" />
+          <entry key="CLASS" value="13" />
           <entry key="CSS" value="3" />
-          <entry key="FTL" value="65" />
+          <entry key="FTL" value="71" />
           <entry key="HTML" value="13" />
           <entry key="Handlebars/Mustache" value="55" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="227" />
+          <entry key="JAVA" value="239" />
           <entry key="Manifest" value="1" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="32" />
-          <entry key="SQL" value="8" />
+          <entry key="SQL" value="9" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="1" />
           <entry key="XML" value="33" />
@@ -127,10 +131,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/security.ftl">
+        <entry file="file://$PROJECT_DIR$/src/main/java/switer/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="272">
+              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,7 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/greeting.html" />
         <option value="$PROJECT_DIR$/target/switer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/main/java/switer/Application.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/jboss-web.xml" />
@@ -182,34 +188,35 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/userEdit.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/switer/config/MvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/switer/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/greeting.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/parts/ecurity.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/registration.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/main.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/switer/domains/User.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/switer/service/MailService.java" />
         <option value="$PROJECT_DIR$/src/main/java/switer/config/MailConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/switer/service/MailSender.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/login.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/switer/repos/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/switer/config/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/switer/controller/RegistrationController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/01b04155-b026-4112-bb4f-7c50f6176d09/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/switer/domains/Message.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db/template/V1__Init_DB.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V1__Init_DB.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" />
         <option value="$PROJECT_DIR$/src/main/java/switer/controller/UserController.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/switer/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/parts/security.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/switer/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/switer/domains/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/switer/controller/ControllerUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/main.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/switer/domains/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/switer/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/switer/controller/RegistrationController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/login.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/switer/service/UserService.java" />
       </list>
     </option>
   </component>
@@ -398,7 +405,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538556340733" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538565525154" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../gs-securing-web/initial/pom.xml" />
@@ -604,7 +611,7 @@
       <workItem from="1538154858926" duration="1357000" />
       <workItem from="1538202635899" duration="8190000" />
       <workItem from="1538391326127" duration="8430000" />
-      <workItem from="1538492998295" duration="12602000" />
+      <workItem from="1538492998295" duration="19320000" />
     </task>
     <task id="LOCAL-00001" summary="Admin">
       <created>1538042125751</created>
@@ -624,10 +631,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131512000" />
+    <option name="totallyTimeSpent" value="138230000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16822916" />
@@ -641,8 +648,8 @@
       <window_info anchor="bottom" id="Database Console" sideWeight="0.27704677" weight="0.49367088" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.19029851" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.184375" side_tool="true" visible="true" weight="0.24152543" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.815625" visible="true" weight="0.24152543" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.60364586" side_tool="true" visible="true" weight="0.3516949" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.39635417" weight="0.3516949" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -659,7 +666,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.108333334" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.17916666" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -715,12 +722,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/switer/controller/RegistrationController.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/switer/controller/UserController.java</url>
           <line>72</line>
           <properties />
@@ -730,7 +731,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/target/switer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/bean.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -828,13 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/greeting.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -851,13 +844,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#405#430#1" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registration.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -878,23 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/switer/domains/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
-          <folding>
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1298#1299#0" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V1__Init_DB.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -906,37 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/switer/domains/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="7" lean-forward="true" selection-start-line="2" selection-end-line="38" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -999,23 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/switer/controller/RegistrationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1031,47 +952,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/switer/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1677">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/switer/config/MvcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/switer/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/switer/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -1082,10 +966,135 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/security.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="130" selection-start-column="130" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/domains/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-779">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2805#2806#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="e#2929#2930#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/domains/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/controller/ControllerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registration.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/controller/RegistrationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/switer/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

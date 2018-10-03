@@ -1,6 +1,7 @@
 package switer.service;
 
 
+import freemarker.template.utility.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,8 +12,8 @@ import switer.domains.Role;
 import switer.domains.User;
 import switer.repos.UserRepository;
 
-import java.util.Collections;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -44,6 +45,12 @@ public class UserService implements UserDetailsService {
         user.setActivationCode(UUID.randomUUID().toString());
         userRepository.save(user);
 
+        sendMessage(user);
+        return true;
+
+    }
+
+    private void sendMessage(User user) {
         if(!StringUtils.isEmpty(user.getEmail()))
         {
             String message = String.format(
@@ -52,8 +59,6 @@ public class UserService implements UserDetailsService {
             );
             mailsender.send(user.getEmail(), "Activation code", message);
         }
-        return true;
-
     }
 
 
@@ -67,5 +72,72 @@ public class UserService implements UserDetailsService {
         user.setActivationCode(null);
         userRepository.save(user);
         return true;
+    }
+
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    public void saveUser(User user, String username, Map<String, String> form) {
+
+        user.setUsername(username);
+
+        Set<String> roles = Arrays.stream(Role.values()).map(Role::name).collect(Collectors.toSet());
+
+        user.getRoles().clear();
+        for (String key : form.keySet())
+        {
+            if(roles.contains(key)){
+                user.getRoles().add(Role.valueOf(key));
+            }
+        }
+
+        userRepository.save(user);
+
+
+
+    }
+
+    public void updateProfile(User user, String password, String email) {
+
+        String userEmail = user.getEmail();
+        if (userEmail == null && StringUtils.isEmpty(userEmail))
+        {
+            userEmail = "";
+        }
+
+
+        boolean mailChanged = (email != null && !email.contains(userEmail)) ||
+                        (userEmail != null && !userEmail.contains(email));
+
+        if(mailChanged){
+                user.setEmail(email);
+                if(!StringUtils.isEmpty(email))
+                {
+                    user.setActivationCode(UUID.randomUUID().toString());
+
+                }
+        }
+
+
+
+        if(!StringUtils.isEmpty(password))
+        {
+            user.setPassword(password);
+        }
+
+        userRepository.save(user);
+
+
+        if(mailChanged)
+        {
+            sendMessage(user);
+        }
+
+
+
+
+
+
     }
 }

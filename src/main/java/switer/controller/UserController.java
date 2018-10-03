@@ -2,39 +2,41 @@ package switer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import switer.domains.Role;
 import switer.domains.User;
-import switer.repos.UserRepository;
-
-
-import java.util.Arrays;
-
-import java.util.Map;
+import switer.service.UserService;
 
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
-@PreAuthorize("hasAuthority('ADMIN')")
 public class UserController
 {
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
+
+
+
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public String userList(Model model){
 
-        List<User> usersFromDb = userRepository.findAll();
+        List<User> usersFromDb = userService.findAll();
         model.addAttribute("users", usersFromDb);
 
         return "userList";
     }
 
+
+
+
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("{user}")
     public String userEditForm(@PathVariable User user, Model model)
     {
@@ -42,7 +44,7 @@ public class UserController
         model.addAttribute("roles", Role.values());
         return "userEdit";
     }
-
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping
     public String userEditSave(
             @RequestParam String username,
@@ -51,27 +53,25 @@ public class UserController
     )
     {
 
-        user.setUsername(username);
-
-        Set<String> roles = Arrays.stream(Role.values()).map(Role::name).collect(Collectors.toSet());
-
-        user.getRoles().clear();
-        for (String key : form.keySet())
-        {
-            if(roles.contains(key)){
-                user.getRoles().add(Role.valueOf(key));
-            }
-        }
-
-
-
-
-        userRepository.save(user);
+        userService.saveUser(user, username, form );
 
         return "redirect:/user";
     }
 
 
+    @GetMapping("profile")
+    public String getProfile(Model model, @AuthenticationPrincipal User user)
+    {
+        model.addAttribute("username", user.getUsername());
+        model.addAttribute("email", user.getEmail());
+        return "profile";
+    }
 
+    @PostMapping("profile")
+    public String updateProfile(@AuthenticationPrincipal User user, @RequestParam String password, String email)
+    {
+        userService.updateProfile(user, password, email);
 
+        return "redirect:/user/profile";
+    }
 }

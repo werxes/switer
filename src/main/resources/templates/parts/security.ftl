@@ -11,7 +11,6 @@
 >
 <#else>
     <#assign
-    name = ""
     isAdmin = false
     currentUserId = -1
 >

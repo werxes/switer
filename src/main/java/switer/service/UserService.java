@@ -1,7 +1,6 @@
 package switer.service;
 
 
-import freemarker.template.utility.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -119,8 +118,6 @@ public class UserService implements UserDetailsService {
         {
             userEmail = "";
         }
-
-
         boolean mailChanged = (email != null && !email.contains(userEmail)) ||
                         (userEmail != null && !userEmail.contains(email));
 
@@ -133,25 +130,30 @@ public class UserService implements UserDetailsService {
                 }
         }
 
-
-
         if(!StringUtils.isEmpty(password))
         {
             user.setPassword(password);
         }
-
         userRepository.save(user);
-
 
         if(mailChanged)
         {
             sendMessage(user);
         }
 
+    }
 
 
 
+    public void subscribe(User currentUser, User user) {
+        user.getSubscribers().add(currentUser);
 
+        userRepository.save(user);
+    }
 
+    public void unsubscribe(User currentUser, User user) {
+        user.getSubscribers().remove(currentUser);
+
+        userRepository.save(user);
     }
 }

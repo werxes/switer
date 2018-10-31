@@ -3,6 +3,7 @@ package switer.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -21,18 +22,23 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import switer.domains.Message;
 import switer.domains.User;
+import switer.domains.dto.MessageDto;
 import switer.repos.MessageRepository;
 import switer.service.MessageService;
 
 @Controller
 public class MessageController {
 	@Autowired
-	private MessageRepository messageRepo;
+	private MessageRepository messageRepository;
 
 	@Autowired
 	private MessageService messageService;
@@ -47,8 +53,9 @@ public class MessageController {
 
 	@GetMapping("/main")
 	public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model,
-			@PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable) {
-		Page<Message> page = messageService.messageList(pageable, filter);
+			@PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable,
+			@AuthenticationPrincipal User user) {
+		Page<MessageDto> page = messageService.messageList(pageable, filter, user);
 
 		model.addAttribute("page", page);
 		model.addAttribute("url", "/main");
@@ -72,10 +79,10 @@ public class MessageController {
 
 			model.addAttribute("message", null);
 
-			messageRepo.save(message);
+			messageRepository.save(message);
 		}
 
-		Iterable<Message> messages = messageRepo.findAll();
+		Iterable<Message> messages = messageRepository.findAll();
 
 		model.addAttribute("messages", messages);
 
@@ -103,8 +110,7 @@ public class MessageController {
 	public String userMessges(@AuthenticationPrincipal User currentUser, @PathVariable User author, Model model,
 			@RequestParam(required = false) Message message,
 			@PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable) {
-
-		Page<Message> page = messageService.messageListForUser(pageable, currentUser, author);
+		Page<MessageDto> page = messageService.messageListForUser(pageable, currentUser, author);
 
 		model.addAttribute("userChannel", author);
 		model.addAttribute("subscriptionsCount", author.getSubscriptions().size());
@@ -112,7 +118,6 @@ public class MessageController {
 		model.addAttribute("isSubscriber", author.getSubscribers().contains(currentUser));
 		model.addAttribute("page", page);
 		model.addAttribute("message", message);
-		model.addAttribute("isCurrentUser", currentUser.equals(author));
 		model.addAttribute("isCurrentUser", currentUser.equals(author));
 		model.addAttribute("url", "/user-messages/" + author.getId());
 
@@ -134,10 +139,30 @@ public class MessageController {
 
 			saveFile(message, file);
 
-			messageRepo.save(message);
+			messageRepository.save(message);
 		}
 
 		return "redirect:/user-messages/" + user;
 	}
 
+	@GetMapping("/messages/{message}/like")
+	public String like(@AuthenticationPrincipal User currentUser, @PathVariable Message message,
+			RedirectAttributes redirectAttributes, @RequestHeader(required = false) String referer) {
+		Set<User> likes = message.getLikes();
+
+		if (likes.contains(currentUser)) {
+			likes.remove(currentUser);
+		} else {
+			likes.add(currentUser);
+		}
+
+		messageRepository.save(message);
+
+		UriComponents components = UriComponentsBuilder.fromHttpUrl(referer).build();
+
+		components.getQueryParams().entrySet()
+				.forEach(pair -> redirectAttributes.addAttribute(pair.getKey(), pair.getValue()));
+
+		return "redirect:" + components.getPath();
+	}
 }

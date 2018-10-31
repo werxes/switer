@@ -17,12 +17,13 @@
 	            <div class="row">
 	                <a class="col align-self-center" href="/user-messages/${message.author.id}">${message.authorName}</a>
 	                
-	                <a class="col align-self-center" href="#">
-	                	<#if true>
-		                	<i class="far fa-thumbs-up"></i>
-		                <#else>
+	                <a class="col align-self-center" href="/messages/${message.id}/like">
+	                	<#if message.meLiked>
 		                	<i class="fas fa-thumbs-up"></i>
+		                <#else>
+		                	<i class="far fa-thumbs-up"></i>
 	                	</#if>
+	                	${message.likes}
 	                </a>
 	                
 	                <#if message.author.id == currentUserId>

@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "switer",
+                "projectName": "switer",
+                "workingDirectory": "c:\\SSIS-ETL\\zJava2\\switer",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "switer",
+                "projectName": "switer",
+                "workingDirectory": "c:\\SSIS-ETL\\zJava2\\switer",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

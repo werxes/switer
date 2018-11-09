@@ -1,6 +1,5 @@
 package switer.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -20,7 +19,6 @@ import javax.validation.Valid;
 import java.util.Collections;
 import java.util.Map;
 
-
 @Controller
 public class RegistrationController {
 
@@ -36,50 +34,40 @@ public class RegistrationController {
     private RestTemplate restTemplate;
 
     @GetMapping("registration")
-    public String registration()
-    {
+    public String registration() {
         return "registration";
     }
 
     @PostMapping("registration")
-    public String addUser(
-            @RequestParam("password2") String passwordConfirmation,
-            @RequestParam("g-recaptcha-response") String captchaResponce,
-            @Valid User user,
-            BindingResult bindingResult,
-            Model model
-    )
-    {
-        String url = String.format(CAPTCHA_URL, secret, captchaResponce);
-        CaptchaResponseDto response = restTemplate.postForObject(url, Collections.emptyList(), CaptchaResponseDto.class);
+    public String addUser(@RequestParam("password2") String passwordConfirmation,
+            @RequestParam("g-recaptcha-response") String captchaResponce, @Valid User user, BindingResult bindingResult,
+            Model model) {
+        // String url = String.format(CAPTCHA_URL, secret, captchaResponce);
+        // CaptchaResponseDto response = restTemplate.postForObject(url,
+        // Collections.emptyList(), CaptchaResponseDto.class);
 
-        if (!response.isSuccess()) {
-            model.addAttribute("captchaError", "Fill captcha");
-        }
+        /*
+         * if (!response.isSuccess()) { model.addAttribute("captchaError",
+         * "Fill captcha"); }
+         */
 
         boolean isConfirmedEmpty = StringUtils.isEmpty(passwordConfirmation);
 
-        if (isConfirmedEmpty)
-        {
+        if (isConfirmedEmpty) {
             model.addAttribute("password2Error", "Confirmation password could not be empty!");
         }
 
-
-        if (user.getPassword() != null && !user.getPassword().contains(passwordConfirmation))
-        {
+        if (user.getPassword() != null && !user.getPassword().contains(passwordConfirmation)) {
             model.addAttribute("passwordError", "Password does not match");
         }
 
-        if(isConfirmedEmpty || bindingResult.hasErrors() || !response.isSuccess())
-        {
+        if (isConfirmedEmpty || bindingResult.hasErrors() /* || !response.isSuccess() */) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
             model.mergeAttributes(errors);
             return "registration";
         }
 
-
-        if(!userService.addUser(user))
-        {
+        if (!userService.addUser(user)) {
             model.addAttribute("usernameError", "User already exists");
             return "registration";
 
@@ -87,13 +75,11 @@ public class RegistrationController {
         return "redirect:/login";
     }
 
-
     @GetMapping("/activate/{code}")
-    public String activate(Model model, @PathVariable String code)
-    {
+    public String activate(Model model, @PathVariable String code) {
         boolean isActivated = userService.activateUser(code);
 
-        if(isActivated) {
+        if (isActivated) {
             model.addAttribute("messageType", "success");
             model.addAttribute("message", "User successfully activated");
 
@@ -104,7 +90,5 @@ public class RegistrationController {
 
         return "login";
     }
-
-
 
 }

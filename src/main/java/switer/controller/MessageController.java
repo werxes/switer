@@ -35,8 +35,14 @@ import switer.domains.dto.MessageDto;
 import switer.repos.MessageRepository;
 import switer.service.MessageService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class MessageController {
+
+	Logger logger = LoggerFactory.getLogger(MessageController.class);
+
 	@Autowired
 	private MessageRepository messageRepository;
 
@@ -48,6 +54,9 @@ public class MessageController {
 
 	@GetMapping("/")
 	public String greeting(Map<String, Object> model) {
+
+		logger.info("\nAn INFO Message\n");
+
 		return "greeting";
 	}
 

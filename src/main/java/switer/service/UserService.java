@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -72,17 +74,8 @@ public class UserService implements UserDetailsService {
         return true;
     }
 
-    /*
-     * public void sendMessage(User user) throws InterruptedException { String
-     * message = String.format( "Hello, %s \n" +
-     * "Welcome to Switer. Please visit next link: http://localhost:8989/activate/%s"
-     * , user.getUsername(), user.getActivationCode());
-     * 
-     * mailsender.send(user.getEmail(), "Activation code", message);
-     * System.out.println("\nStep 4 - End sending email.\n"); }
-     */
-
     @Async
+
     private void sendMessage(User user) throws InterruptedException {
 
         String message = String.format(

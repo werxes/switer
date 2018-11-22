@@ -60,43 +60,61 @@ public class MessageController {
 		return "greeting";
 	}
 
-	@GetMapping("/main")
-	public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model,
+    @GetMapping("/main")
+    public String main(
+            @RequestParam(required = false, defaultValue = "") String filter,
+            Model model,
+            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable,
+            @AuthenticationPrincipal User user
+    ) {
+        Page<MessageDto> page = messageService.messageList(pageable, filter, user);
+
+        model.addAttribute("page", page);
+        model.addAttribute("url", "/main");
+        model.addAttribute("filter", filter);
+
+        return "main";
+    }
+
+    @PostMapping("/main")
+    public String add(
+            @AuthenticationPrincipal User user,
+            @Valid Message message,
+            BindingResult bindingResult,
+            Model model,
 			@PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable,
-			@AuthenticationPrincipal User user) {
-		Page<MessageDto> page = messageService.messageList(pageable, filter, user);
+			@RequestParam(required = false, defaultValue = "") String filter,
+            @RequestParam("file") MultipartFile file
+    ) throws IOException
+	{
+        message.setAuthor(user);
 
-		model.addAttribute("page", page);
-		model.addAttribute("url", "/main");
-		model.addAttribute("filter", filter);
+        if (bindingResult.hasErrors()) {
+            Map<String, String> errorsMap = ControllerUtils.getErrors(bindingResult);
 
-		return "main";
-	}
+            model.mergeAttributes(errorsMap);
+            model.addAttribute("message", message);
+        } else {
+            saveFile(message, file);
 
-	@PostMapping("/main")
-	public String add(@AuthenticationPrincipal User user, @Valid Message message, BindingResult bindingResult,
-			Model model, @RequestParam("file") MultipartFile file) throws IOException {
-		message.setAuthor(user);
 
-		if (bindingResult.hasErrors()) {
-			Map<String, String> errorsMap = ControllerUtils.getErrors(bindingResult);
+			Page<MessageDto> page = messageService.messageList(pageable, filter, user);
 
-			model.mergeAttributes(errorsMap);
-			model.addAttribute("message", message);
-		} else {
-			saveFile(message, file);
-
-			model.addAttribute("message", null);
+			model.addAttribute("page", page);
+			model.addAttribute("url", "/main");
+            model.addAttribute("message", null);
 
 			messageRepository.save(message);
-		}
+        }
 
-		Iterable<Message> messages = messageRepository.findAll();
+        Iterable<Message> messages = messageRepository.findAll();
 
-		model.addAttribute("messages", messages);
+        model.addAttribute("messages", messages);
 
-		return "main";
-	}
+        //return "main";
+		return "redirect:/main";
+    }
+
 
 	private void saveFile(@Valid Message message, @RequestParam("file") MultipartFile file) throws IOException {
 		if (file != null && !file.getOriginalFilename().isEmpty()) {
